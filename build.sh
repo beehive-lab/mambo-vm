@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Create a new image and mount it
-dd bs=1G seek=2 of=rootfs.img count=0
+dd bs=1G seek=8 of=rootfs.img count=0
 mkfs.ext4 rootfs.img
 mkdir mnt
 sudo mount -o loop rootfs.img ./mnt
