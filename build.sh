@@ -14,6 +14,8 @@ cd ..
 sudo mount -o bind /run/ mnt/run/
 sudo mount -o bind /dev/ mnt/dev/
 sudo mount -t proc none mnt/proc/
+sudo chroot mnt/ /usr/bin/pacman-key --init
+sudo chroot mnt/ /usr/bin/pacman-key --populate archlinuxarm
 sudo chroot mnt/ /usr/bin/pacman -Syu gcc ruby git make --noconfirm
 sudo chroot mnt/ /usr/bin/su alarm -c "cd /home/alarm && git clone https://github.com/beehive-lab/mambo.git && cd mambo && git submodule init && git submodule update"
 sudo umount mnt/run/
